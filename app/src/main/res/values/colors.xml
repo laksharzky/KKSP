@@ -14,5 +14,6 @@
     <color name="white">#ffffffff</color>
     <color name="white2">#f1f8fe</color>
     <color name="maroon">#8f3e43</color>
-
+    <color name="black">#000000</color>
+    <color name="youth_red">#DC7773</color>
 </resources>

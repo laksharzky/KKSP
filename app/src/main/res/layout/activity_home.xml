@@ -10,10 +10,82 @@
 
 
   <FrameLayout
+      android:layout_weight="1"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:id="@+id/container"/>
+      android:id="@+id/container"></FrameLayout>
+<LinearLayout
+    android:visibility="gone"
+    android:id="@+id/layout_tab"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_gravity="center"
+            android:textColor="@color/youth_red"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Programs"
+            android:textSize="20dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        android:layout_width="match_parent"
+        app:tabSelectedTextColor="@color/pink"
+        app:tabTextColor="@color/black"
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab1"
+        android:text="Pendidikan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab2"
+            android:text="Kesehatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab3"
+            android:text="Informasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab4"
+            android:text="Pengembangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:background="@color/youth_red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
+</LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
