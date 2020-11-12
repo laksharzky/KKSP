@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "64148084483",
+    "firebase_url": "https://kksp-71c87.firebaseio.com",
+    "project_id": "kksp-71c87",
+    "storage_bucket": "kksp-71c87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64148084483:android:833cd558e3187d705ebb36",
+        "android_client_info": {
+          "package_name": "com.example.laksha.kksp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64148084483-dosb9svpvqf1jagedru2k86ri8g76p18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laksha.kksp",
+            "certificate_hash": "8b89e40ed7934fa6705d8c5f714e27d8cc4ab825"
+          }
+        },
+        {
+          "client_id": "64148084483-o02a1v0t6jcbgur069uaahcl6aqshvo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiZBDC2J-WSWv9DCEH-tk0oJPNf6-y1-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64148084483-o02a1v0t6jcbgur069uaahcl6aqshvo0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,6 +4,7 @@ package com.example.laksha.kksp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +40,22 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
     View view;
     TextView title_toolbar;
 
      private RecyclerView recyclerView;
      private List<CardViewHome> items;
-
+     private TextView txtViewUserEmail;
+    private Button txtlogout;
     private RecyclerView recyclerView2;
      private List<Posts> data;
 
+     Button button;
+     private FirebaseAuth firebaseAuth;
+    DatabaseReference reference;
+    FirebaseDatabase database;
+    PostsAdapter adapter;
 
 
 
@@ -55,30 +71,80 @@ public class HomeFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() == null){
+            getActivity().finish();
+            startActivity(new Intent(view.getContext(), MainActivity.class));
 
+        }
+        txtViewUserEmail = (TextView) view.findViewById(R.id.txtViewUserEmail);
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        txtViewUserEmail.setText("Welcome "+user.getEmail());
+
+
+
+
+        txtlogout = (Button) view.findViewById(R.id.txtlogout) ;
         recyclerView2 = (RecyclerView) view.findViewById(R.id.recyclerView2);
-        PostsAdapter adapter2 = new PostsAdapter(getContext(),data);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView2.setAdapter(adapter2);
+        data = new ArrayList<Posts>();
+
         // Inflate the layout for this fragment
         Toolbar toolbarTop = (Toolbar) view.findViewById(R.id.toolbar_top);
         TextView toolbar_title = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
 
+        button = (Button) view.findViewById(R.id.button);
+        button.setOnClickListener(this);
+
+        txtlogout.setOnClickListener(this);
+
+
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Posts");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
+                {
+                    Posts posts = dataSnapshot1.getValue(Posts.class);
+                    data.add(posts);
+
+
+                }
+                adapter = new PostsAdapter(getContext(),data);
+                recyclerView2.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+              Toast.makeText(getActivity(),"Something is wrong",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
 return view;
     }
+
+
+
+
+
+
+    //isi recycler view sementara
+
+
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-
-        data = new ArrayList<>();
-        data.add(new Posts(R.drawable.logo, "kaaak","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"));
-        data.add(new Posts(R.drawable.about, "kaaasasasak","kaka"));
-        data.add(new Posts(R.drawable.about, "kaaasasasak","kaka"));
-        data.add(new Posts(R.drawable.about, "kaaasasasak","kaka"));
-
+    public void onClick(View v) {
+        if (v == txtlogout){
+            getActivity().finish();
+            firebaseAuth.signOut();
+            startActivity(new Intent(view.getContext(), MainActivity.class));
+        }
+        if (v == button){
+            startActivity(new Intent(getContext(),about.class));
+        }
     }
-
-
-
 }

@@ -11,7 +11,7 @@
 
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edt_nama_lengkap"
         android:layout_width="310dp"
         android:layout_height="50sp"
         android:layout_marginStart="16dp"
@@ -24,7 +24,7 @@
         android:inputType="textPersonName"
         android:textColorHint="@color/gray"
 
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/edtloginpass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.969" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edtloginpass"
         android:layout_width="310dp"
         android:layout_height="50sp"
         android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/edtloginpass"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -118,7 +118,7 @@
         android:textColor="@color/black"
         android:textSize="40sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/edt_nama_lengkap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"

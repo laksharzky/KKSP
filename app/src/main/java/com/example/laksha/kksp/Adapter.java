@@ -1,6 +1,7 @@
 package com.example.laksha.kksp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -42,11 +43,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         Glide.with(context).load(data.get(position).getPhoto()).into(holder.imgCardView);
+
        holder.title.setText(data.get(position).getJudul());
        holder.desc.setText(data.get(position).getIsi());
+
 
     }
 

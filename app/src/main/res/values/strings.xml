@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">KKSP</string>
     <string name="menu_home">Home</string>
-    <string name="menu_dash">Dashboard</string>
-    <string name="menu_create">Create</string>
-
+    <string name="menu_dash">Programs</string>
+    <string name="menu_create">Report</string>
+<string name="visititle">visi &amp; misi</string>
+    <string name="misi">Mengembangkan model pendidikan, pelayanan kesehatan dan kesejahteraan sosial serta memberikan perlindungan bagi anak-anak
+Mengembangkan jaringan kajian dan informasi tentang anak dalam meningkatkan hak-hak anak
+Mempertahankan jalur-jalur reformasi struktural yang telah ditempuh dalam memperjuangkan demokrasi dan keadilan</string>
+    <string name="visi">Yayasan KKSP Bergerak di Bidang Sosial dan Kemanusiaan yang memiliki Visi untuk mampu mengambil bagian dalam mewujudkan anak-anak yang sehat, terampil, kreatif dan mandiri dalam mempersiapkan diri menuju kedewasaannya serta memacu peningkatan partisipasi masyarakat dalam memberikan perlindungan, pendidikan dan pelayanan kesehatan pada anak-anak.</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
     <string name="about">Yayasan Kelompok Kerja Sosial Perkotaan atau selanjutnya di sebut KKSP adalah sebuah Organisasi Non-Pemerintah yang didirikan tahun 1987. KKSP memiliki status hukum No. 9591/YAY/1988, jo, 10/YAY/NOT-RAP/1995 and jo No. 10/443/YAY/PROB/2001 dari Ditsospol Sumatra Utara, Dinas Sosial dan Pengadilan Tinggi Medan untuk melakukan kegiatannya menurut instruksi Mendagri No 8/88. Sejalan dengan perubahan undang-undang yayasan yang baru maka kemudian KKSP melakukan perubahan struktur dan juga penguatan status hukum Yayasan Melalui perubahan akte menjadi akte No. 116 tanggal 26 februari 2013 dan terdaftar di Departemen Hukum dan Perundang-Undangan No. AHU – 7022.AH.01.04 tahun 2013.</string>
     <!-- TODO: Remove or change this placeholder text -->

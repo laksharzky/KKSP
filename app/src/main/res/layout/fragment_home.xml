@@ -33,9 +33,31 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
+
     android:orientation="vertical">
 
- <androidx.constraintlayout.widget.ConstraintLayout
+
+    <TextView
+        android:id="@+id/txtViewUserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:textSize="15sp"
+        android:textColor="@color/gray"
+        android:text="" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:textSize="15sp"
+        android:textColor="@color/youth_red"
+        android:text="Logout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"
      android:layout_marginStart="8dp"
      android:layout_marginTop="4dp"
@@ -45,21 +67,7 @@
      android:layout_height="245dp">
 
 
-     <Button
-        android:background="@color/maroon"
-        android:fontFamily="@font/source_sans_pro_bold"
-         android:textColor="@color/white"
-         android:id="@+id/button"
-         android:textAllCaps="false"
-         android:layout_width="0dp"
-         android:layout_height="35dp"
-         android:layout_marginStart="8dp"
-         android:layout_marginTop="8dp"
-         android:layout_marginEnd="8dp"
-         android:text="Read More"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 
      <TextView
          android:id="@+id/textView7"
@@ -80,6 +88,21 @@
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toBottomOf="@+id/textView6"
          app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:background="@color/maroon"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:textColor="@color/white"
+            android:id="@+id/button"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Read More"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
      <TextView
          android:textStyle="bold"
@@ -93,7 +116,6 @@
          android:layout_marginTop="8dp"
          android:layout_marginEnd="8dp"
          android:text="About US"
-
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -132,16 +154,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
      />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPosts" />
+
+</ScrollView>
 
 
 
